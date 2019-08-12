@@ -1874,6 +1874,10 @@ inline int ATOMIC_DEC_RETURN(ATOMIC_T *v)
 
 
 #ifdef PLATFORM_LINUX
+#ifndef get_ds
+#define get_ds() (KERNEL_DS)
+#endif
+
 /*
 * Open a file with the specific @param path, @param flag, @param mode
 * @param fpp the pointer of struct file pointer to get struct file pointer while file opening is success
